@@ -1,0 +1,35 @@
+# Entorno virtual
+venv/
+.env
+*.env
+
+# __pycache__ y archivos compilados
+__pycache__/
+*.py[cod]
+*.so
+
+# Archivos de logs y temporales
+*.log
+*.sqlite3
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Configuración de editor/IDE
+.vscode/
+.idea/
+
+# Archivos de pruebas
+.coverage
+htmlcov/
+pytest_cache/
+.tox/
+
+# Configuración de virtualenv/poetry/pipenv (si los usas)
+pip-log.txt
+poetry.lock
+Pipfile.lock
+
+# Archivos que puedan contener claves sensibles
+app/settings/*.json
