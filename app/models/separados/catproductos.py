@@ -1,6 +1,4 @@
 from __future__ import annotations
-from typing import TYPE_CHECKING
-
 from typing import Any, Optional, List, TYPE_CHECKING
 from sqlalchemy import Column, Integer, String, Boolean, Text, DateTime, Numeric, ForeignKey, ForeignKeyConstraint, PrimaryKeyConstraint, UniqueConstraint, CheckConstraint
 from sqlalchemy.orm import relationship, Mapped, mapped_column
@@ -9,15 +7,7 @@ from sqlalchemy.dialects.postgresql import DOMAIN
 from app.database.db import Base
 from app.database.custom_types import CITEXT
 
-# Opcional: imports de otras entidades para type checking
-if TYPE_CHECKING:
-    #pass  # aquí puedes agregar from ... import ... si querés autocompletado
-    from app.models.separados.catpresentaciones import CatPresentaciones
-    from app.models.separados.catuventa import CatUventa
-    from app.models.separados.catxproveedor import CatXproveedor
-    from app.models.separados.preciosproductos import PreciosProductos
-    from app.models.separados.catempaques import CatEmpaques
-    from app.models.separados.catsubcategorias import CatSubcategorias
+if TYPE_CHECKING: pass
 
 class CatProductos(Base):
     __tablename__ = 'cat_productos'

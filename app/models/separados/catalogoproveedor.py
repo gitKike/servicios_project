@@ -7,9 +7,7 @@ from sqlalchemy.dialects.postgresql import DOMAIN
 from app.database.db import Base
 from app.database.custom_types import CITEXT
 
-# Opcional: imports de otras entidades para type checking
-if TYPE_CHECKING:
-    pass  # aquí puedes agregar from ... import ... si querés autocompletado
+if TYPE_CHECKING: pass
 
 class CatalogoProveedor(Base):
     __tablename__ = 'catalogo_proveedor'
