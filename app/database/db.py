@@ -1,21 +1,14 @@
-from sqlalchemy.ext.asyncio import create_async_engine, AsyncSession
-from sqlalchemy.orm import sessionmaker
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker, declarative_base
 from app.settings.config import DATABASE_URL
 
-# Cambia el esquema de URL a asyncpg para conexión asíncrona
-ASYNC_DATABASE_URL = DATABASE_URL.replace("postgresql://", "postgresql+asyncpg://")
+# Crear el engine (conexió a la base)
+engine = create_engine(DATABASE_URL, echo=True)
 
-# Crear engine
-engine = create_async_engine(ASYNC_DATABASE_URL, echo=True)
+# Sesión para interactuar con la DB
+SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
-# Crear sessionmaker
-async_session = sessionmaker(
-    bind=engine,
-    expire_on_commit=False,
-    class_=AsyncSession
-)
+# Base para declarar modelos
+Base = declarative_base()
 
-# Dependency para FastAPI
-async def get_session() -> AsyncSession:
-    async with async_session() as session:
-        yield session
+
