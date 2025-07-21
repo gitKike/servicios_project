@@ -1,4 +1,7 @@
 from __future__ import annotations
+import decimal
+import datetime
+import uuid
 from typing import Any, Optional, List, TYPE_CHECKING
 from sqlalchemy import Column, Integer, String, Boolean, Text, DateTime, Numeric, ForeignKey, ForeignKeyConstraint, PrimaryKeyConstraint, UniqueConstraint, CheckConstraint
 from sqlalchemy.orm import relationship, Mapped, mapped_column
@@ -7,7 +10,9 @@ from sqlalchemy.dialects.postgresql import DOMAIN
 from app.database.db import Base
 from app.database.custom_types import CITEXT
 
-if TYPE_CHECKING: pass
+
+if TYPE_CHECKING:
+    pass
 
 class CatalogoProveedor(Base):
     __tablename__ = 'catalogo_proveedor'

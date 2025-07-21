@@ -1,7 +1,6 @@
 # Auto-generado por split_models.py
 
 __all__ = [
-    'Base',
     'CatalogoProveedor',
     'CatCategorias',
     'CatEmpaques',
@@ -18,7 +17,6 @@ __all__ = [
     'PreciosProductos',
 ]
 
-from .base import Base
 from .catalogoproveedor import CatalogoProveedor
 from .catcategorias import CatCategorias
 from .catempaques import CatEmpaques
