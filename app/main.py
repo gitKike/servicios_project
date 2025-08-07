@@ -19,6 +19,11 @@ from app.settings.config import config
 
 from app.routes import productos
 from app.routes import xproveedor
+from app.routes import categorias
+from app.routes import empaques
+from app.routes import presentaciones
+from app.routes import subcategorias
+from app.routes import uventa
 
 
 app = FastAPI()
@@ -26,6 +31,12 @@ app = FastAPI()
 # Agregar router
 app.include_router(productos.router)
 app.include_router(xproveedor.router)
+app.include_router(categorias.router)
+app.include_router(empaques.router)
+app.include_router(presentaciones.router)
+app.include_router(subcategorias.router)
+app.include_router(uventa.router)
+
 
 @app.get("/")
 def read_root():

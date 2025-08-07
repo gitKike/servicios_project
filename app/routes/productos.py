@@ -10,3 +10,4 @@ router = APIRouter(prefix="/productos", tags=["Productos"])
 @router.get("/", response_model=list[ProductoResponse])
 def listar_productos(db: Session = Depends(get_db)):
     return db.query(CatProductos).all()
+
