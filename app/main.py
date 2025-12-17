@@ -37,6 +37,8 @@ app.include_router(presentaciones.router)
 app.include_router(subcategorias.router)
 app.include_router(uventa.router)
 
+from app.models.seguridad.usuario import Usuario
+from app.models.seguridad.perfil import Perfil
 
 @app.get("/")
 def read_root():
