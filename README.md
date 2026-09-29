@@ -81,3 +81,4 @@ Por defecto, la app estará disponible en:
 
 **Kike**  
 📫 spin-e@outlook.com
+📫 kotonete.kid@outlook.com
